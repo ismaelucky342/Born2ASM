@@ -12,11 +12,11 @@ AppFirst                equ $8000                       ; First byte of code (un
                         org AppFirst                    ; Start of application
 
 AppEntry                ld  hl, LOC1                    ;
-                        ld a, (hl)                      ;
-                        inc   hl                        ;
-                        add a, (hl)                     ;
-                        ld  hl, LOC3                    ;
-                        ld (hl), a                      ;
+                        ld  a,(hl)                      ;
+                        inc hl                          ;
+                        add a,(hl)                      ;
+                        ld  hl,LOC3                     ;
+                        ld (hl),a                       ;
 
                         halt                            ;
                         jp AppEntry                     ;
