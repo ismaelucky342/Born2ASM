@@ -11,19 +11,33 @@ AppFirst                equ $8000                       ; First byte of code (un
 
                         org AppFirst                    ; Start of application
 
-AppEntry                ld  hl, LOC1                    ;
-                        ld  a,(hl)                      ;
-                        inc hl                          ;
-                        add a,(hl)                      ;
-                        ld  hl,LOC3                     ;
-                        ld (hl),a                       ;
+AppEntry                ld B, 5                         ;
+                        ld IX, num1                     ;
+bucle                   ld C, (IX)                      ;
+                        ld D, (IX + 5)                  ;
+                        call compara                    ;
+                        ld (IX + 10), A                 ;
+                        inc IX                          ;
+                        djnz bucle                      ;
+                        jp fin                          ;
 
-                        halt                            ;
-                        jp AppEntry                     ;
+compara                 LD A, D                         ;
+                        CP C                            ;
+                        JP Z, iguales                   ;
+                        JP NC, mayor                    ;
+                        LD A, -1                        ;
+                        RET                             ;
+iguales                 LD A, 0                         ;
+                        RET                             ;
+mayor                   LD A, 1                         ;
+                        RET                             ;
 
-                        LOC1 defb 1                     ;
-                        LOC2 defb 6                     ;
-                        LOC3 defb 1                     ;
+fin                     halt                            ; Replace these lines with your code
+                        jp fin                          ;
+
+num1                    defb 1,1,2,2,3                  ;
+num2                    defb 3,3,2,2,1                  ;
+res2                    defs 5                          ;
 
 ; Stop planting code after this. (When generating a tape file we save bytes below here)
 AppLast                 equ *-1                         ; The last used byte's address

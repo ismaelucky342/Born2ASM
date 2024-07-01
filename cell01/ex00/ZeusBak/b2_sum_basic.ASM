@@ -11,19 +11,14 @@ AppFirst                equ $8000                       ; First byte of code (un
 
                         org AppFirst                    ; Start of application
 
-AppEntry                ld  hl, LOC1                    ;
-                        ld  a,(hl)                      ;
-                        inc hl                          ;
-                        add a,(hl)                      ;
-                        ld  hl,LOC3                     ;
-                        ld (hl),a                       ;
+AppEntry                ld a, 7                         ;
+                        ld b, 8                         ;
+                        add a, b                        ;
 
-                        halt                            ;
+                        ret                             ;
+                        halt                            ; Replace these lines with your code
                         jp AppEntry                     ;
 
-                        LOC1 defb 1                     ;
-                        LOC2 defb 6                     ;
-                        LOC3 defb 1                     ;
 
 ; Stop planting code after this. (When generating a tape file we save bytes below here)
 AppLast                 equ *-1                         ; The last used byte's address
