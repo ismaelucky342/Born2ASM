@@ -29,23 +29,31 @@ The repository is divided into several sections, each dedicated to a specific as
 
 ### Part 2: Generic Assembly
 
+> Cada ejercicio de `cell02` a `cell05` incluye su enunciado y una solución completa en archivos modernos `.s`.
+
 #### cell02 - Assembly Basics:
 
-- Introduction to generic assembly language.
-- Syntax, basic instructions, and simple programs.
+- Foundational assembly language practice.
+- Builds core syntax, registers, memory access, branches, loops, subroutines and simple data structures.
+- Includes 8 exercises starting from basic program structure and increasing in difficulty.
+- New exercises use `.s` modern assembler syntax while preserving the original legacy example.
 
 #### cell03 - Advanced Exercises:
 
-- More complex exercises in generic assembly language.
-- Techniques and structures for advanced problem-solving.
+- Advanced generic assembly problems using modern `.s` files.
+- Contains 8 exercises for string processing, arrays, bitwise operations, stack use, macros, optimization, tables and performance.
+- Designed to deepen low-level thinking and prepare for larger projects.
 
 ### Part 3: Advanced Projects
 
 #### cell04 - Intermediate Projects:
 
-- Mid-level projects in assembly language.
-- Emphasis on optimization and performance.
+- Mid-level modern assembler projects using `.s`.
+- Includes 6 projects focused on calculator logic, parsing, math libraries, memory management, I/O emulation, and virtual devices.
+- Emphasis on combining multiple assembly concepts into practical systems.
+
 #### cell05 - Advanced Projects:
 
-- High-level assembly projects.
-- Integration of advanced techniques and complex problem-solving.
+- Advanced modern assembler projects using `.s`.
+- Includes 6 projects for shell loops, encryption, virtual machines, DSP-style routines, game kernel logic, and compiler backend practice.
+- Built for learning, performance, and mastery of assembly programming.
